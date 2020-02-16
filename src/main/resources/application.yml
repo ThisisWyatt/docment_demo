@@ -1,0 +1,27 @@
+spring:
+  datasource: #数据库连接信息
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spring?characterEncoding=utf-8
+    username: root
+    password: 369cc
+
+  servlet: #上传文件大小限制
+    multipart:
+      max-file-size: 10240KB
+      max-request-size: 20480KB
+
+  devtools: #项目热部署
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: WEB-INF/**
+
+  jpa:
+    hibernate:
+      ddl-auto: update #create:每次运行程序没有表格会新建 有则清空数据 create-drop 结束时清空 update:每次运行程序没有表格会新建 有则不会清空数据 只会更新 validate:运行程序会校验数据与数据库的字段类型是否相同，不同会报错
+
+  freemarker:
+    cache: false
+
+  thymeleaf:
+    cache: false
